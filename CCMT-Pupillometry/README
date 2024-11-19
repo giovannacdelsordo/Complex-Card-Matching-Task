@@ -7,3 +7,5 @@ Ensure that all files are stored in the same folder and saved locally on your de
 To start the task, open the CCM_task.py file using the PsychoPy Runner. There is no need to open any other files manually.
 
 Upon completing the task, the output data files (.csv and .edf) will be saved in the same folder as the .py files.
+
+Note that an EyeLink Eye-Tracker is necessary to run this task. The code will need to be adjusted for other types of eye-tracker. 
