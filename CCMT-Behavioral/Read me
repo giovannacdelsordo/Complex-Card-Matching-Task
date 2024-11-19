@@ -1,0 +1,9 @@
+This branch contains all the files required to run the behavioral version of the Complex Card Sorting Task (CCMT).
+
+Instructions:
+
+Ensure that all files are stored in the same folder and saved locally on your device.
+
+To start the task, open the CCM_task.py file using the PsychoPy Runner. There is no need to open any other files manually.
+
+Upon completing the task, the output data files (.csv) will be saved in the same folder as the .py files.
