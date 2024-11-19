@@ -1,1 +1,15 @@
+This folder contains two Python notebook to pre-process the behavioral and the pupillometry data. This pre-processing only concerns classification of each individual trials as either
+Exploratory or Exploitative. 
 
+The notebook for the behavioral data contains two pieces of code: 
+
+(1) Classify trials and save all participants' data files into 1 single Excel file. 
+(2) Classify trials and update each participant's data files and save them as individual data set. 
+
+The notebook for the pupillometry data contains also two pieces of code: 
+
+(1) Classify trials and update each participant's data files and save them as individual data set. 
+(2) Transfer the newly created "State" column to the pupillometry data sets for each participant separately. 
+
+Note that (1) you will first need to create sample reports for each individual EDF files and have them converted into Excel files; (2) no pre-processing of the actually pupil size 
+measures are provided. 
