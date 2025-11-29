@@ -249,7 +249,7 @@ for difficulty in difficulties:
                                 " There are 6 rules:.\n\n\n" +
                                 "- Match cards based on their color only (blue, green, red, yellow).\n\n" +
                                 "- Match cards based on their shapes only (square, diamond, circle, triangle).\n\n" +
-                                "-Match cards based on their number of shapes only (1,2,3,4).\n\n" +
+                                "- Match cards based on their number of shapes only (1,2,3,4).\n\n" +
                                 "- Match cards based on 2 rules combined: color and shape.\n\n" +
                                 "- Match cards based on 2 rules combined: color and number of shapes.\n\n" +
                                 "- Match cards based on 2 rules combined: shape and shape number of shapes.\n\n",
@@ -299,9 +299,10 @@ for difficulty in difficulties:
         
         # Third instruction page
         showTextImgTextAndWaitSpace("In this example, the bottom card has the following characteristics: orange, circle, 4 shapes, small size.\n" +
-                                    "By trial and error, you need to guess what of the 10 possible rules is being played.\n" +
-                                    "The 1st, 3rd and 4th cards follow the number rule. However, only one correct answer is possible.\n" +
-                                    "It could be the shape rule, but the 2nd, 3rd, and 4th card would correspond si this is not the correct answer.\n" +
+                                    "By trial and error, you need to guess which of the 6 possible rules is being played.\n" +
+                                    "The 2nd and 4th cards follow the shape-number rule. However, only one correct answer is possible.\n" +
+                                    "The rule could be number and size (four and small) but let's say that you try this rule and you get an 'incorrect' feedback.\n" +
+                                    "It means that you should try another rule.\n" +
                                     "Another possibility is to consider the shape-size rule and that would be correct. The third card at the top has both the same shape and same size as the bottom card.",
                                     (0,0.3),
                                     "Press the space bar to continue",
@@ -379,5 +380,4 @@ showTextAndWaitSpace("Thank you for participating.\n\n\n" +
                     "Please tell the researcher that you are done.\n" +
                      "Researcher: Press the space bar to end the task")
  
-tracker.setConnectionState(False)
 core.quit()
