@@ -338,7 +338,7 @@ for difficulty in difficulties:
                                 (0,-0.4))
         
         # Practice trials configuration
-        numberOfBlocks = 0#2 # Change the number of blocks
+        numberOfBlocks = 2 # Change the number of blocks
         numberOfTrialsPerBlock = 6 # Change the number of trials per block
         blocksRules = rules.hardRules
         random.shuffle(blocksRules)
@@ -363,8 +363,8 @@ for difficulty in difficulties:
                                 "This part of the game will take around 15 minutes.\n\n" +
                                 "Press the space bar to start.\n\n")
         
-        numberOfBlocks = 2#6 # Change the number of blocks
-        numberOfTrialsPerBlock = 2#10 # Change the number of trials within each block
+        numberOfBlocks = 6 # Change the number of blocks
+        numberOfTrialsPerBlock = 10 # Change the number of trials within each block
         blocksRules = rules.hardRules + rules.hardRules
         random.shuffle(blocksRules)
         while not checkNoConsecutive(blocksRules):
