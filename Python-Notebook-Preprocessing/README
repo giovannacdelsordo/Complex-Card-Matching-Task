@@ -11,5 +11,5 @@ The notebook for the pupillometry data contains also two pieces of code:
 (1) Classify trials and update each participant's data files and save them as individual data set. 
 (2) Transfer the newly created "State" column to the pupillometry data sets for each participant separately. 
 
-Note that (1) you will first need to create sample reports for each individual EDF files and have them converted into Excel files; (2) no pre-processing of the actually pupil size 
+Note that (1) you will first need to create sample reports for each individual EDF files and have them converted into Excel files (.xlsx specifically); (2) no pre-processing of the actually pupil size 
 measures are provided. 
