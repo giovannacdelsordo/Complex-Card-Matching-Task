@@ -7,3 +7,14 @@ Ensure that all files are stored in the same folder and saved locally on your de
 To start the task, open the CCM_task.py file using the PsychoPy Runner. There is no need to open any other files manually.
 
 Upon completing the task, the output data files (.csv) will be saved in the same folder as the .py files.
+
+Note about the number of blocks and trials.
+In the current version of the task, the default structure includes:
+- Practice: 2 blocks of 10 trials for each difficulty level (easy and hard)
+- Main experiment: 10 blocks of 10 trials for each difficulty levelBased on our calculations, a 45-minute testing session can comfortably accommodate approximately 15 blocks per difficulty level, assuming an average response time of 5 seconds per trial. These settings are therefore implemented as the default parameters in this version of the CCMT.
+
+All block and trial counts are fully customizable in the script:
+- Easy condition — practice: adjustable at line X
+- Easy condition — main task: adjustable at line X
+- Hard condition — practice: adjustable at line X
+- Hard condition — main task: adjustable at line X
