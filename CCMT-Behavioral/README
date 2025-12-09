@@ -14,7 +14,7 @@ In the current version of the task, the default structure includes:
 - Main experiment: 10 blocks of 10 trials for each difficulty levelBased on our calculations, a 45-minute testing session can comfortably accommodate approximately 15 blocks per difficulty level, assuming an average response time of 5 seconds per trial. These settings are therefore implemented as the default parameters in this version of the CCMT.
 
 All block and trial counts are fully customizable in the script:
-- Easy condition — practice: adjustable at line X
-- Easy condition — main task: adjustable at line X
-- Hard condition — practice: adjustable at line X
-- Hard condition — main task: adjustable at line X
+- Easy condition — practice: adjustable at lines 251 and 252
+- Easy condition — main task: adjustable at lines 275 and 276
+- Hard condition — practice: adjustable at lines 350 and 351
+- Hard condition — main task: adjustable at lines 375 and 376
