@@ -1,4 +1,4 @@
-Two Excel (or there equivalent in CSV) files are available for download. 
+Four CSV files are available for download. 
 
 (1) "sample_output_behavioral" contains sample data for the behavioral part of the task. 
 (2) "sample_output_pupillometry" contains sample data for the pupillometry part of the task. 
