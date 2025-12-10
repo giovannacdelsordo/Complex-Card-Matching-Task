@@ -18,3 +18,11 @@ All block and trial counts are fully customizable in the script:
 - Easy condition — main task: adjustable at lines 275 and 276
 - Hard condition — practice: adjustable at lines 350 and 351
 - Hard condition — main task: adjustable at lines 375 and 376
+
+If you'd like to change the timing of the trials, go to the "librule.py".
+To change how long participants have to answer, go to line 54. 
+To increase or decrease the delay between the moment participants click on a card and feedback, go to line 55. 
+To change how long the feedback window is displayed for, go to the main task code, and change the integer on line 109. 
+
+To change the color of stimuli, change the color labels in the "libcard.py" file, line 13. 
+To change the size of the cards and stimuli, go to the "librule.py", line 27. 
