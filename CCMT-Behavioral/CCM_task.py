@@ -1,3 +1,8 @@
+# Complex Card Matching Task
+# Copyright (C) 2025  Giovanna Del Sordo
+# Licensed under the GNU General Public License v3.0 or later.
+# See the LICENSE file or <https://github.com/giovannacdelsordo/Complex-Card-Matching-Task/blob/faf3ffe3f0b5109642ff9f68b086cc10bc26339c/LICENSE> for details.
+
 from psychopy import visual, core, event, gui
 from libcard import Card
 from librule import RULE
@@ -106,15 +111,21 @@ def runExperiment(numberOfBlocks,numberOfTrialsPerBlock,blocksRules,difficulty, 
 
 # User information
 userInfoDlg = gui.Dlg(title="Participant information")
-userInfoDlg.addField("Participant number")
-userInfoDlg.addField("Age")
-userInfoDlg.addField("Gender", choices=["Male", "Female", "Other"])
-participantNumber, age, gender = None, None, None
-while not (participantNumber and age and gender):
-    userInfoDlg.show()
-    if userInfoDlg.OK == False:
-        core.quit()
-    participantNumber, age, gender = userInfoDlg.data
+myDlg = gui.Dlg(title="CCMT Task")
+myDlg.addText('Subject info')
+myDlg.addField('Participant number:')
+myDlg.addField('Age:')
+myDlg.addField('Gender:', choices=["Female", "Male"])
+
+ok_data = myDlg.show()  # show dialog and wait for OK or Cancel
+
+if not myDlg.OK:  # or if ok_data is None
+    core.quit()
+
+# Now read the data AFTER show()
+participantNumber = str(ok_data[0]).strip()
+age = str(ok_data[1]).strip()
+gender = str(ok_data[2]).strip()
 
 # File name name for behavioral data
 studyName = "CCMT"
@@ -238,8 +249,8 @@ for difficulty in difficulties:
                                 (0,-0.4))
         
         # Practice trials set up
-        numberOfBlocks = 0#2 # Change the number of blocks (remember: each block contains several trials)
-        numberOfTrialsPerBlock = 6 # Change the number of trials within each block
+        numberOfBlocks = 2 # Change the number of blocks (remember: each block contains several trials)
+        numberOfTrialsPerBlock = 10 # Change the number of trials within each block
         blocksRules = rules.easyRules
         random.shuffle(blocksRules)
         runExperiment(numberOfBlocks,numberOfTrialsPerBlock,blocksRules,difficulty,False)
@@ -259,11 +270,11 @@ for difficulty in difficulties:
         
         # Real trials instructions
         showTextAndWaitSpace("The real experiment is now going to start.\n" +
-                                "This part of the game will take around 15 minutes.\n\n" +
+                                "This part of the game will take around 20 minutes.\n\n" +
                                 "Press the space bar to start.")
         
-        numberOfBlocks = 2#6 # Change number of blocks
-        numberOfTrialsPerBlock = 2#10 # Change number of trials per block
+        numberOfBlocks = 15 # Change number of blocks
+        numberOfTrialsPerBlock = 10 # Change number of trials per block
         blocksRules = rules.easyRules + rules.easyRules
         random.shuffle(blocksRules)
         while not checkNoConsecutive(blocksRules):
@@ -300,9 +311,8 @@ for difficulty in difficulties:
         # Third instruction page
         showTextImgTextAndWaitSpace("In this example, the bottom card has the following characteristics: orange, circle, 4 shapes, small size.\n" +
                                     "By trial and error, you need to guess which of the 6 possible rules is being played.\n" +
-                                    "The 2nd and 4th cards follow the shape-number rule. However, only one correct answer is possible.\n" +
-                                    "The rule could be number and size (four and small) but let's say that you try this rule and you get an 'incorrect' feedback.\n" +
-                                    "It means that you should try another rule.\n" +
+                                    "The 1st, 3rd and 4th cards follow the number rule. However, only one correct answer is possible.\n" +
+                                    "It could be the shape-number of shapes rule, but the 2nd and 4th card would correspond so this is not the correct answer.\n" +
                                     "Another possibility is to consider the shape-size rule and that would be correct. The third card at the top has both the same shape and same size as the bottom card.",
                                     (0,0.3),
                                     "Press the space bar to continue",
@@ -314,11 +324,10 @@ for difficulty in difficulties:
         
         # Fourth page instruction
         showTextImgTextAndWaitSpace("Let's look at another example.\n" +
-                                    "Here, the bottom card has the following characteristics: orange, square, 3, medium size. \n" + 
-                                    "The rule could be color-size (orange and medium size), but two top cards match this rule (1st and 4rd cards).\n" + 
-                                    "The rule could be color and shape (orange and square) but let's say that you try this rule and you get an 'incorrect' feedback.\n" +
-                                    "It means that you should try another rule.\n" +
-                                    "The correct answer is to click on the third top card as the solution left is to apply the color-number rule (orange and 3 shapes).",
+                                    "Here, the bottom card has the following characteristics: orange, diamond, 1 shape, small size. \n" + 
+                                    "The rule could be shape (diamond, 3rd card), but remember that the rule should be a combination of two characteristics, not just one.\n" + 
+                                    "The rule could be color and size (orange and small size) but two cards (2nd and 4th top cards) correspond, so this is not the correct answer.\n" +
+                                    "The correct answer is to click on the first top card as the solution left is to apply the color-number rule (orange and 1 shape).",
                                     (0,0.3),
                                     "Press the space bar to continue",
                                     (0,-0.4),
@@ -339,7 +348,7 @@ for difficulty in difficulties:
         
         # Practice trials configuration
         numberOfBlocks = 2 # Change the number of blocks
-        numberOfTrialsPerBlock = 6 # Change the number of trials per block
+        numberOfTrialsPerBlock = 10 # Change the number of trials per block
         blocksRules = rules.hardRules
         random.shuffle(blocksRules)
         runExperiment(numberOfBlocks,numberOfTrialsPerBlock,blocksRules,difficulty,False)
@@ -363,7 +372,7 @@ for difficulty in difficulties:
                                 "This part of the game will take around 15 minutes.\n\n" +
                                 "Press the space bar to start.\n\n")
         
-        numberOfBlocks = 6 # Change the number of blocks
+        numberOfBlocks = 15 # Change the number of blocks
         numberOfTrialsPerBlock = 10 # Change the number of trials within each block
         blocksRules = rules.hardRules + rules.hardRules
         random.shuffle(blocksRules)
