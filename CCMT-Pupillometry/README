@@ -13,13 +13,13 @@ Note that an EyeLink Eye-Tracker is necessary to run this task. The code will ne
 Note about the number of blocks and trials.
 In the current version of the task, the default structure includes:
 - Practice: 2 blocks of 10 trials for each difficulty level (easy and hard)
-- Main experiment: 10 blocks of 10 trials for each difficulty levelBased on our calculations, a 45-minute testing session can comfortably accommodate approximately 15 blocks per difficulty level, assuming an average response time of 5 seconds per trial. These settings are therefore implemented as the default parameters in this version of the CCMT.
+- Main experiment: 15 blocks of 10 trials for each difficulty levelBased on our calculations, a 45-minute testing session can comfortably accommodate approximately 15 blocks per difficulty level, assuming an average response time of 5 seconds per trial. These settings are therefore implemented as the default parameters in this version of the CCMT.
 
 All block and trial counts are fully customizable in the script:
-- Easy condition — practice: adjustable at lines 313 and 314
-- Easy condition — main task: adjustable at lines 340 and 341
-- Hard condition — practice: adjustable at lines 415 and 416
-- Hard condition — main task: adjustable at lines 443 and 444
+- Easy condition — practice: adjustable at lines 298 and 299
+- Easy condition — main task: adjustable at lines 325 and 326
+- Hard condition — practice: adjustable at lines 400 and 401
+- Hard condition — main task: adjustable at lines 428 and 429
 
 If you'd like to change the timing of the trials, go to the "librule.py".
 To change how long participants have to answer, go to line 54. 
