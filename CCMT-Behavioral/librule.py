@@ -1,3 +1,8 @@
+# Complex Card Matching Task
+# Copyright (C) 2025  Giovanna Del Sordo
+# Licensed under the GNU General Public License v3.0 or later.
+# See the LICENSE file or <https://github.com/giovannacdelsordo/Complex-Card-Matching-Task/blob/faf3ffe3f0b5109642ff9f68b086cc10bc26339c/LICENSE> for details.
+
 # librule
 from libcard import CardVisual, Card
 import random
